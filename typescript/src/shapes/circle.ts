@@ -1,14 +1,12 @@
-interface Circle extends Shape {
-    radius: number,
-}
+class Circle implements Shape {
+    #radius: number
+    constructor(radius: number) {
+        this.#radius = radius
+    }
 
-function circle(radius: number): Circle {
-    return {
-        radius,
-        computeArea: function (): number {
-            return Math.PI * radius * radius
-        }
+    computeArea(): number {
+        return Math.PI * this.#radius * this.#radius
     }
 }
 
-export { circle }
+export { Circle }

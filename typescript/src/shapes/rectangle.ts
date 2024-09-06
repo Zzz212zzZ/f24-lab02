@@ -1,17 +1,15 @@
-interface Rectangle extends Shape {
-    width: number,
-    height: number,
+class Rectangle implements Shape {
+  #width: number
+  #height: number
+
+  constructor (width: number, height: number) {
+    this.#width = width
+    this.#height = height
+  }
+
+  computeArea (): number {
+    return this.#width * this.#height
+  }
 }
 
-function newRectangle(width: number, height: number): Rectangle {
-    return {
-        width,
-        height,
-
-        computeArea: function (): number {
-            return width * height
-        }
-    }
-}
-
-export { Rectangle, newRectangle }
+export { Rectangle }

@@ -1,14 +1,12 @@
-interface Square extends Shape {
-    sideLen: number,
+class Square implements Shape {
+  #sideLen: number
+  constructor (sideLen: number) {
+    this.#sideLen = sideLen
+  }
+
+  computeArea (): number {
+    return this.#sideLen * this.#sideLen
+  }
 }
 
-function square(sideLen: number): Square {
-    return {
-        sideLen,
-        computeArea: function (): number {
-            return sideLen * sideLen
-        }
-    }
-}
-
-export { square }
+export { Square }
